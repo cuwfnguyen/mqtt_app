@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MQTT_app</string>
+    <string name="led1">LED1</string>
+    <string name="led2">LED2</string>
+    <string name="mt">MT</string>
+    <string name="mort">MORT</string>
+    <string name="off">OFF</string>
+    <string name="on">ON</string>
+    <string name="led3">LED3</string>
+</resources>
