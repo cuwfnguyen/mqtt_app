@@ -177,8 +177,12 @@ public class MainActivity extends AppCompatActivity {
                 boolean checked = ((Switch) v).isChecked();
                 if (checked) {
                     led1 = 1;
+                    send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                    Pub(send);
                 } else {
                     led1 = 0;
+                    send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                    Pub(send);
                 }
             }
         });
@@ -189,14 +193,18 @@ public class MainActivity extends AppCompatActivity {
                     boolean checked = ((Switch) v).isChecked();
                     if (checked) {
                         led2 = 1;
+                        Log.d("mqtt", "led2=1");
+                        send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                        Pub(send);
                     } else {
                         led2 = 0;
+                        Log.d("mqtt", "led2=0");
+                        send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                        Pub(send);
                     }
                 }
             });
         }
-        send= "{"+"led1:"+led1+", led2:"+led2+"}";
-        Pub(send);
     }
 
 }
