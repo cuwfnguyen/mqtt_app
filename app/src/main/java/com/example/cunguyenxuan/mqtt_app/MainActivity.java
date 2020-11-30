@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //            startService(mainService);
 //        }
         String clientId = MqttClient.generateClientId();
-        client = new MqttAndroidClient(this.getApplicationContext(), "tcp://broker.hivemq.com:1883", clientId);
+        client = new MqttAndroidClient(this.getApplicationContext(), "tcp://mqtt.eclipse.org:1883", clientId);
 
         try {
             IMqttToken token = client.connect();
@@ -177,11 +177,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean checked = ((Switch) v).isChecked();
                 if (checked) {
                     led1 = 1;
-                    send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                    send= "{"+ "\"led1\":" +led1+ ", \"led2\":" +led2+"}";
                     Pub(send);
                 } else {
                     led1 = 0;
-                    send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                    send= "{"+ "\"led1\":" +led1+ ", \"led2\":" +led2+"}";
                     Pub(send);
                 }
             }
@@ -194,12 +194,12 @@ public class MainActivity extends AppCompatActivity {
                     if (checked) {
                         led2 = 1;
                         Log.d("mqtt", "led2=1");
-                        send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                        send= "{"+ "\"led1\":" +led1+ ", \"led2\":" +led2+"}";
                         Pub(send);
                     } else {
                         led2 = 0;
                         Log.d("mqtt", "led2=0");
-                        send= "{"+"led1:"+led1+", led2:"+led2+"}";
+                        send= "{"+ "\"led1\":" +led1+ ", \"led2\":" +led2+"}";
                         Pub(send);
                     }
                 }
