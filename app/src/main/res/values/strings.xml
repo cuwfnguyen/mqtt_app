@@ -7,4 +7,6 @@
     <string name="off">OFF</string>
     <string name="on">ON</string>
     <string name="led3">LED3</string>
+    <string name="nhi_t">Nhiệt độ</string>
+    <string name="m">Độ ẩm</string>
 </resources>
